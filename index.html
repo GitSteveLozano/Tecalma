@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tecalma — Claude Code Prompt Guide</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1>Tecalma</h1>
+      <p class="subtitle">Claude Code Prompt Guide</p>
+    </div>
+  </header>
+
+  <nav>
+    <div class="container">
+      <ul>
+        <li><a href="#overview">Overview</a></li>
+        <li><a href="#getting-started">Getting Started</a></li>
+        <li><a href="#development">Development</a></li>
+        <li><a href="#code-quality">Code Quality</a></li>
+        <li><a href="#conventions">Conventions</a></li>
+        <li><a href="#tips">Tips</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main class="container">
+
+    <section id="overview">
+      <h2>Project Overview</h2>
+      <p>This document provides prompt templates and guidelines for using Claude Code effectively with the Tecalma project.</p>
+      <p><strong>Tecalma Tortilla's</strong> — When working with Claude Code on this repository, use the prompts and conventions below to get consistent, high-quality results.</p>
+    </section>
+
+    <section id="getting-started">
+      <h2>Getting Started Prompts</h2>
+
+      <div class="prompt-card">
+        <h3>Explore the codebase</h3>
+        <pre><code>Explore the Tecalma repository structure and summarize the key directories, entry points, and technologies used.</code></pre>
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+      </div>
+
+      <div class="prompt-card">
+        <h3>Understand a feature</h3>
+        <pre><code>Read through the code related to &lt;feature&gt; and explain how it works, including the data flow and any external dependencies.</code></pre>
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+      </div>
+    </section>
+
+    <section id="development">
+      <h2>Development Prompts</h2>
+
+      <div class="prompt-card">
+        <h3>Add a new feature</h3>
+        <pre><code>Add &lt;feature description&gt; to the Tecalma project. Follow existing code style and conventions. Write tests if a test framework is already configured.</code></pre>
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+      </div>
+
+      <div class="prompt-card">
+        <h3>Fix a bug</h3>
+        <pre><code>Investigate and fix the following issue: &lt;description of bug or error message&gt;. Explain the root cause and the fix.</code></pre>
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+      </div>
+
+      <div class="prompt-card">
+        <h3>Refactor code</h3>
+        <pre><code>Refactor &lt;file or module&gt; to improve readability and maintainability without changing behavior. Keep changes minimal and focused.</code></pre>
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+      </div>
+    </section>
+
+    <section id="code-quality">
+      <h2>Code Quality Prompts</h2>
+
+      <div class="prompt-card">
+        <h3>Review changes</h3>
+        <pre><code>Review my staged changes and suggest improvements for correctness, readability, and security.</code></pre>
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+      </div>
+
+      <div class="prompt-card">
+        <h3>Add tests</h3>
+        <pre><code>Write tests for &lt;file or module&gt; covering the main functionality and edge cases. Use the existing test framework and conventions.</code></pre>
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+      </div>
+    </section>
+
+    <section id="conventions">
+      <h2>Conventions</h2>
+      <ul class="conventions-list">
+        <li>Keep prompts concise and specific to get the best results.</li>
+        <li>Reference file paths or function names when asking about existing code.</li>
+        <li>Let Claude Code read the relevant files before requesting changes.</li>
+        <li>Prefer small, incremental changes over large rewrites.</li>
+      </ul>
+    </section>
+
+    <section id="tips">
+      <h2>Tips</h2>
+      <ol class="tips-list">
+        <li><strong>Be specific</strong> — Instead of "fix the app," say "fix the 500 error when submitting the order form in <code>src/orders/handler.js</code>."</li>
+        <li><strong>Provide context</strong> — Share error messages, logs, or screenshots when reporting issues.</li>
+        <li><strong>Iterate</strong> — Start with exploration prompts, then move to implementation.</li>
+        <li><strong>Review before committing</strong> — Always review Claude Code's changes before pushing to shared branches.</li>
+      </ol>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>Tecalma Tortilla's &mdash; Claude Code Prompt Guide</p>
+    </div>
+  </footer>
+
+  <script>
+    function copyCode(button) {
+      const code = button.previousElementSibling.querySelector('code');
+      navigator.clipboard.writeText(code.textContent).then(function() {
+        button.textContent = 'Copied!';
+        setTimeout(function() { button.textContent = 'Copy'; }, 2000);
+      });
+    }
+  </script>
+</body>
+</html>
