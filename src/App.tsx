@@ -22,7 +22,7 @@ function ScrollToTop() {
 
 export default function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/Tecalma">
       <CartProvider>
         <ScrollToTop />
         <div className="flex flex-col min-h-screen">
