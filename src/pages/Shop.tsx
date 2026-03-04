@@ -4,8 +4,7 @@ import { toast } from 'sonner';
 import WavyDivider from '../components/WavyDivider';
 import ScrollReveal from '../components/ScrollReveal';
 
-// TODO: Replace with actual product photo
-const PACKAGE_IMG = 'https://images.unsplash.com/photo-1600335895229-6e75511892c8?w=600';
+const PACKAGE_IMG = 'https://images.unsplash.com/photo-1599974579688-8dbdd335c77f?w=900';
 
 interface ShopProduct {
   id: string;

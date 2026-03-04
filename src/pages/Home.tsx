@@ -4,8 +4,7 @@ import ScrollReveal from '../components/ScrollReveal';
 import WavyDivider from '../components/WavyDivider';
 import FloralBorder from '../components/FloralBorder';
 
-// TODO: Replace with actual product photo
-const PACKAGE_IMG = 'https://images.unsplash.com/photo-1600335895229-6e75511892c8?w=600';
+const PACKAGE_IMG = 'https://images.unsplash.com/photo-1599974579688-8dbdd335c77f?w=900';
 
 const testimonials = [
   {
@@ -156,19 +155,17 @@ export default function Home() {
                 desc: 'Made locally on the islands in small batches for maximum freshness every time.',
                 badge: 'Island Made',
               },
-            ].map((feat, i) => (
-              <ScrollReveal key={feat.title} delay={i * 100}>
-                <div className="bg-cream rounded-3xl p-8 text-center shadow-md hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300">
-                  <div className="w-16 h-16 bg-teal/10 rounded-2xl flex items-center justify-center mx-auto mb-5">
-                    {feat.icon}
-                  </div>
-                  <h3 className="font-display text-lg font-bold text-charcoal mb-2">{feat.title}</h3>
-                  <p className="font-body text-sm text-charcoal/60 mb-4">{feat.desc}</p>
-                  <span className="inline-block text-xs font-body font-700 uppercase tracking-wider bg-teal/10 text-teal px-3 py-1 rounded-full">
-                    {feat.badge}
-                  </span>
+            ].map((feat) => (
+              <div key={feat.title} className="bg-cream rounded-3xl p-8 text-center shadow-md hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300">
+                <div className="w-16 h-16 bg-teal/10 rounded-2xl flex items-center justify-center mx-auto mb-5">
+                  {feat.icon}
                 </div>
-              </ScrollReveal>
+                <h3 className="font-display text-lg font-bold text-charcoal mb-2">{feat.title}</h3>
+                <p className="font-body text-sm text-charcoal/60 mb-4">{feat.desc}</p>
+                <span className="inline-block text-xs font-body font-700 uppercase tracking-wider bg-teal/10 text-teal px-3 py-1 rounded-full">
+                  {feat.badge}
+                </span>
+              </div>
             ))}
           </div>
         </div>

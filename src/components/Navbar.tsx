@@ -41,10 +41,10 @@ export default function Navbar() {
           <div className="flex items-center justify-between h-16 md:h-20">
             {/* Logo */}
             <Link to="/" className="flex flex-col leading-none">
-              <span className="font-display text-xl md:text-2xl font-bold text-teal tracking-tight">
+              <span className="font-display text-xl md:text-2xl font-bold tracking-tight" style={{ color: '#1B9E8E' }}>
                 TECALMA
               </span>
-              <span className="font-body text-[10px] font-700 uppercase tracking-[0.25em] text-charcoal/50">
+              <span className="font-body text-[10px] font-700 uppercase tracking-[0.25em]" style={{ color: 'rgba(44, 36, 22, 0.5)' }}>
                 Tortillas
               </span>
             </Link>

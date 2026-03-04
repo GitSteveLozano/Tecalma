@@ -1,8 +1,7 @@
 import { useCart } from '../contexts/CartContext';
 import { toast } from 'sonner';
 
-// TODO: Replace with actual product photo
-const PACKAGE_IMG = 'https://images.unsplash.com/photo-1600335895229-6e75511892c8?w=600';
+const PACKAGE_IMG = 'https://images.unsplash.com/photo-1599974579688-8dbdd335c77f?w=900';
 
 interface ProductCardProps {
   id: string;
