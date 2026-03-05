@@ -1,20 +1,40 @@
 import { useState } from 'react';
 import { toast } from 'sonner';
 
+const WAITLIST_FORM_ENDPOINT = 'https://formspree.io/f/xykngkyg';
 const ISLANDS = ["O'ahu", 'Maui', "Hawai'i Island", "Kaua'i", "Moloka'i", 'Other'];
 
 export default function WaitlistForm() {
-  const [submitted, setSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSubmitted, setIsSubmitted] = useState(false);
   const [email, setEmail] = useState('');
   const [island, setIsland] = useState('');
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setSubmitted(true);
-    toast.success("You're on the list! We'll let you know when ordering opens.");
+    setIsSubmitting(true);
+
+    try {
+      const response = await fetch(WAITLIST_FORM_ENDPOINT, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email, island }),
+      });
+
+      if (response.ok) {
+        setIsSubmitted(true);
+        toast.success("You're on the list! We'll let you know when ordering opens.");
+      } else {
+        toast.error("Something went wrong. Please try again or email us at hello@tecalmatortillas.com");
+      }
+    } catch {
+      toast.error("Something went wrong. Please try again or email us at hello@tecalmatortillas.com");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
-  if (submitted) {
+  if (isSubmitted) {
     return (
       <p className="font-body font-700 text-teal text-center py-4">
         ✓ You're on the list! We'll be in touch soon.
@@ -45,9 +65,10 @@ export default function WaitlistForm() {
       </select>
       <button
         type="submit"
-        className="bg-teal text-white font-body font-700 px-6 py-3 rounded-full hover:bg-teal-dark transition-colors shadow-md cursor-pointer whitespace-nowrap"
+        disabled={isSubmitting}
+        className="bg-teal text-white font-body font-700 px-6 py-3 rounded-full hover:bg-teal-dark transition-colors shadow-md cursor-pointer whitespace-nowrap disabled:opacity-60 disabled:cursor-not-allowed"
       >
-        Notify Me →
+        {isSubmitting ? 'Sending...' : 'Notify Me →'}
       </button>
     </form>
   );
