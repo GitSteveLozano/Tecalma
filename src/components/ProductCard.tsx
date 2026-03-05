@@ -1,7 +1,7 @@
 import { useCart } from '../contexts/CartContext';
 import { toast } from 'sonner';
 
-const PACKAGE_IMG = 'https://images.unsplash.com/photo-1574484284002-952d92456975?w=900';
+const PACKAGE_IMG = 'https://tastesbetterfromscratch.com/wp-content/uploads/2025/04/Flour-Tortillas25-1.jpg';
 
 interface ProductCardProps {
   id: string;

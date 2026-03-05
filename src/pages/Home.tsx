@@ -4,7 +4,8 @@ import ScrollReveal from '../components/ScrollReveal';
 import WavyDivider from '../components/WavyDivider';
 import FloralBorder from '../components/FloralBorder';
 
-const PACKAGE_IMG = 'https://images.unsplash.com/photo-1574484284002-952d92456975?w=900';
+const HERO_IMG = 'https://biancazapatka.com/wp-content/uploads/2019/08/homemade-tortillas-recipe-easy-flatbread-tacos-wraps-burrito.jpg';
+const PACKAGE_IMG = 'https://tastesbetterfromscratch.com/wp-content/uploads/2025/04/Flour-Tortillas25-1.jpg';
 
 const testimonials = [
   {
@@ -106,8 +107,8 @@ export default function Home() {
                 </svg>
               </div>
               <img
-                src={PACKAGE_IMG}
-                alt="Tecalma Tortillas package"
+                src={HERO_IMG}
+                alt="Homemade flour tortillas"
                 className="relative z-10 w-64 sm:w-80 rounded-2xl object-cover shadow-2xl -rotate-3"
               />
             </div>
