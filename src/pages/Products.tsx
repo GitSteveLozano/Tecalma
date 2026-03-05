@@ -1,6 +1,7 @@
 import ProductCard from '../components/ProductCard';
 import WavyDivider from '../components/WavyDivider';
-import ScrollReveal from '../components/ScrollReveal';
+import WaitlistForm from '../components/WaitlistForm';
+import FloralBorder from '../components/FloralBorder';
 
 export default function Products() {
   return (
@@ -22,38 +23,26 @@ export default function Products() {
       <section className="bg-cream py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-            <ScrollReveal>
-              <ProductCard
-                id="flour-10"
-                name="Flour Tortillas"
-                subtitle="10 Pack · 14 oz (396g)"
-                price={5.99}
-                description="Our signature extra-soft flour tortillas. Perfect for tacos, burritos, wraps, and quesadillas. Made fresh in Hawai'i."
-                badges={['Non-GMO', 'Small Batch', 'Extra Soft']}
-              />
-            </ScrollReveal>
-            <ScrollReveal delay={100}>
-              <ProductCard
-                id="whole-wheat"
-                name="Whole Wheat Tortillas"
-                subtitle="Coming Soon"
-                price={6.49}
-                description="All the softness you love with whole wheat goodness. Same Tecalma quality, heartier flavor."
-                badges={['Whole Grain', 'Non-GMO']}
-                comingSoon
-              />
-            </ScrollReveal>
-            <ScrollReveal delay={200}>
-              <ProductCard
-                id="mini-6"
-                name="Mini Tortillas"
-                subtitle="Coming Soon"
-                price={4.99}
-                description="Street taco-sized perfection. A mini pack for the perfect bite every time."
-                badges={['Mini Size', 'Non-GMO']}
-                comingSoon
-              />
-            </ScrollReveal>
+            <ProductCard
+              name="Flour Tortillas"
+              subtitle="10 Pack · 14 oz (396g)"
+              description="Our signature extra-soft flour tortillas. Perfect for tacos, burritos, wraps, and quesadillas. Made fresh in Hawai'i."
+              badges={['Non-GMO', 'Small Batch', 'Extra Soft']}
+            />
+            <ProductCard
+              name="Whole Wheat Tortillas"
+              subtitle="Coming Soon"
+              description="All the softness you love with whole wheat goodness. Same Tecalma quality, heartier flavor."
+              badges={['Whole Grain', 'Non-GMO']}
+              comingSoon
+            />
+            <ProductCard
+              name="Mini Tortillas"
+              subtitle="Coming Soon"
+              description="Street taco-sized perfection. A mini pack for the perfect bite every time."
+              badges={['Mini Size', 'Non-GMO']}
+              comingSoon
+            />
           </div>
         </div>
       </section>
@@ -63,28 +52,42 @@ export default function Products() {
       {/* Ingredients callout */}
       <section className="bg-amber-light py-20">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <ScrollReveal>
-            <h2 className="font-display text-3xl font-bold text-charcoal mb-4">
-              What's <span className="italic text-teal">Not</span> in Our Tortillas
-            </h2>
-            <p className="font-body text-charcoal/70 mb-10 max-w-xl mx-auto">
-              We believe what you leave out matters just as much as what you put in.
-            </p>
-          </ScrollReveal>
+          <h2 className="font-display text-3xl font-bold text-charcoal mb-4">
+            What's <span className="italic text-teal">Not</span> in Our Tortillas
+          </h2>
+          <p className="font-body text-charcoal/70 mb-10 max-w-xl mx-auto">
+            We believe what you leave out matters just as much as what you put in.
+          </p>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
             {[
               { label: 'No Artificial Preservatives', icon: '🚫' },
               { label: 'No Hydrogenated Oils', icon: '💧' },
               { label: 'Non-GMO Ingredients', icon: '🌿' },
-            ].map((item, i) => (
-              <ScrollReveal key={item.label} delay={i * 100}>
-                <div className="bg-warm-white rounded-3xl p-6 shadow-md">
-                  <div className="text-3xl mb-3">{item.icon}</div>
-                  <p className="font-body font-700 text-charcoal">{item.label}</p>
-                </div>
-              </ScrollReveal>
+            ].map(item => (
+              <div key={item.label} className="bg-warm-white rounded-3xl p-6 shadow-md">
+                <div className="text-3xl mb-3">{item.icon}</div>
+                <p className="font-body font-700 text-charcoal">{item.label}</p>
+              </div>
             ))}
           </div>
+        </div>
+      </section>
+
+      <FloralBorder />
+
+      {/* Waitlist */}
+      <section id="waitlist" className="bg-[#E8F5F3] py-20">
+        <div className="max-w-xl mx-auto px-4 text-center">
+          <span className="inline-flex items-center gap-2 bg-teal/10 text-teal font-body font-700 text-xs uppercase tracking-wider px-4 py-2 rounded-full mb-6">
+            Coming Soon to Your Door 🌺
+          </span>
+          <h2 className="font-display text-3xl font-bold text-charcoal mb-3">
+            Be First in Line
+          </h2>
+          <p className="font-body text-charcoal/60 mb-8 leading-relaxed">
+            Online ordering is almost here. Join the waitlist and we'll notify you the moment Tecalma is available for island-wide delivery.
+          </p>
+          <WaitlistForm />
         </div>
       </section>
     </>

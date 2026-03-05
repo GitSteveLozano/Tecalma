@@ -2,6 +2,7 @@ import { useState, useEffect, useCallback } from 'react';
 import { Link } from 'react-router-dom';
 import WavyDivider from '../components/WavyDivider';
 import FloralBorder from '../components/FloralBorder';
+import WaitlistForm from '../components/WaitlistForm';
 
 const HERO_IMG = 'https://biancazapatka.com/wp-content/uploads/2019/08/homemade-tortillas-recipe-easy-flatbread-tacos-wraps-burrito.jpg';
 const PACKAGE_IMG = 'https://tastesbetterfromscratch.com/wp-content/uploads/2025/04/Flour-Tortillas25-1.jpg';
@@ -91,11 +92,17 @@ export default function Home() {
                   Our Story
                 </Link>
               </div>
-              <div className="flex flex-wrap gap-6 text-sm font-body font-600 text-charcoal/60">
+              <div className="flex flex-wrap gap-6 text-sm font-body font-600 text-charcoal/60 mb-4">
                 <span>✦ Non-GMO</span>
                 <span>✦ Small Batch</span>
                 <span>✦ Hawai'i Made</span>
               </div>
+              <p className="text-sm font-body text-charcoal/50">
+                Restaurant or food service?{' '}
+                <Link to="/wholesale" className="text-teal underline hover:text-teal-dark transition-colors">
+                  Ask about wholesale →
+                </Link>
+              </p>
             </div>
 
             {/* Right — product image on blob */}
@@ -323,6 +330,24 @@ export default function Home() {
               </span>
             </Link>
           </div>
+        </div>
+      </section>
+
+      {/* ===== WAITLIST ===== */}
+      <FloralBorder />
+
+      <section id="waitlist" className="bg-[#E8F5F3] py-20">
+        <div className="max-w-xl mx-auto px-4 text-center">
+          <span className="inline-flex items-center gap-2 bg-teal/10 text-teal font-body font-700 text-xs uppercase tracking-wider px-4 py-2 rounded-full mb-6">
+            Coming Soon to Your Door 🌺
+          </span>
+          <h2 className="font-display text-3xl sm:text-4xl font-bold text-charcoal mb-3">
+            Be First in Line
+          </h2>
+          <p className="font-body text-charcoal/60 mb-8 leading-relaxed">
+            Online ordering is almost here. Join the waitlist and we'll notify you the moment Tecalma is available for island-wide delivery.
+          </p>
+          <WaitlistForm />
         </div>
       </section>
     </>

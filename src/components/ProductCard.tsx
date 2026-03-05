@@ -1,13 +1,8 @@
-import { useCart } from '../contexts/CartContext';
-import { toast } from 'sonner';
-
 const PACKAGE_IMG = 'https://tastesbetterfromscratch.com/wp-content/uploads/2025/04/Flour-Tortillas25-1.jpg';
 
 interface ProductCardProps {
-  id: string;
   name: string;
   subtitle: string;
-  price: number;
   description: string;
   badges: string[];
   image?: string;
@@ -15,22 +10,13 @@ interface ProductCardProps {
 }
 
 export default function ProductCard({
-  id,
   name,
   subtitle,
-  price,
   description,
   badges,
   image,
   comingSoon = false,
 }: ProductCardProps) {
-  const { addItem } = useCart();
-
-  const handleAdd = () => {
-    addItem({ productId: id, name, price });
-    toast.success(`${name} added to cart! 🌺`);
-  };
-
   return (
     <div
       className={`bg-warm-white rounded-3xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1.5 ${
@@ -65,19 +51,14 @@ export default function ProductCard({
         <h3 className="font-display text-xl font-bold text-charcoal">{name}</h3>
         <p className="text-sm text-charcoal/60 font-body mb-2">{subtitle}</p>
         <p className="text-charcoal/70 font-body text-sm mb-4">{description}</p>
-        <div className="flex items-center justify-between">
-          <span className="text-2xl font-display font-bold text-teal">
-            ${price.toFixed(2)}
-          </span>
-          {!comingSoon && (
-            <button
-              onClick={handleAdd}
-              className="bg-teal text-white font-body font-700 px-6 py-2.5 rounded-full hover:bg-teal-dark transition-colors shadow-md hover:shadow-lg cursor-pointer"
-            >
-              Add to Cart
-            </button>
-          )}
-        </div>
+        {!comingSoon && (
+          <a
+            href="#waitlist"
+            className="inline-block border-2 border-teal text-teal font-body font-700 px-6 py-2.5 rounded-full hover:bg-teal hover:text-white transition-colors"
+          >
+            Join Waitlist →
+          </a>
+        )}
       </div>
     </div>
   );

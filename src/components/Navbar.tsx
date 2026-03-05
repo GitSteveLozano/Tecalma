@@ -25,6 +25,7 @@ export default function Navbar() {
     { to: '/products', label: 'Products' },
     { to: '/about', label: 'Our Story' },
     { to: '/where-to-buy', label: 'Where to Buy' },
+    { to: '/wholesale', label: 'Wholesale' },
     { to: '/contact', label: 'Contact' },
   ];
 
