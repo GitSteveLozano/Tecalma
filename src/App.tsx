@@ -22,7 +22,7 @@ function ScrollToTop() {
 
 export default function App() {
   return (
-    <BrowserRouter basename="/Tecalma">
+    <BrowserRouter>
       <ScrollToTop />
       <div className="flex flex-col min-h-screen">
         <Navbar />
