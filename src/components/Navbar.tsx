@@ -31,10 +31,8 @@ export default function Navbar() {
   return (
     <>
       <nav
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-          scrolled
-            ? 'bg-warm-white/90 backdrop-blur-md shadow-md'
-            : 'bg-transparent'
+        className={`fixed top-0 left-0 right-0 z-50 bg-warm-white transition-all duration-300 ${
+          scrolled ? 'backdrop-blur-md shadow-md' : ''
         }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -58,7 +56,7 @@ export default function Navbar() {
                   className={`font-body text-sm font-600 px-3 py-2 rounded-lg transition-colors ${
                     location.pathname === link.to
                       ? 'text-teal bg-teal/10'
-                      : 'text-charcoal/70 hover:text-teal hover:bg-teal/5'
+                      : 'text-charcoal hover:text-teal hover:bg-teal/5'
                   }`}
                 >
                   {link.label}
@@ -71,7 +69,7 @@ export default function Navbar() {
               {/* Cart button */}
               <button
                 onClick={() => setCartOpen(true)}
-                className="relative p-2 text-charcoal/70 hover:text-teal transition-colors cursor-pointer"
+                className="relative p-2 text-charcoal hover:text-teal transition-colors cursor-pointer"
                 aria-label="Open cart"
               >
                 <svg width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
@@ -97,7 +95,7 @@ export default function Navbar() {
               {/* Mobile hamburger */}
               <button
                 onClick={() => setMobileOpen(!mobileOpen)}
-                className="md:hidden p-2 text-charcoal/70 cursor-pointer"
+                className="md:hidden p-2 text-charcoal cursor-pointer"
                 aria-label="Toggle menu"
               >
                 <svg width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
@@ -126,7 +124,7 @@ export default function Navbar() {
                 className={`block font-body font-600 px-4 py-3 rounded-xl transition-colors ${
                   location.pathname === link.to
                     ? 'text-teal bg-teal/10'
-                    : 'text-charcoal/70 hover:bg-teal/5'
+                    : 'text-charcoal hover:bg-teal/5'
                 }`}
               >
                 {link.label}
