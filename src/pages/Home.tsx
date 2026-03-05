@@ -1,6 +1,5 @@
 import { useState, useEffect, useCallback } from 'react';
 import { Link } from 'react-router-dom';
-import ScrollReveal from '../components/ScrollReveal';
 import WavyDivider from '../components/WavyDivider';
 import FloralBorder from '../components/FloralBorder';
 
@@ -178,43 +177,39 @@ export default function Home() {
       <section className="bg-gradient-to-br from-amber-light/50 to-cream py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-            <ScrollReveal>
-              <div className="relative">
-                <div className="absolute -inset-4 bg-teal/5 rounded-3xl -rotate-2" aria-hidden="true" />
-                <img
-                  src={PACKAGE_IMG}
-                  alt="Tecalma Flour Tortillas"
-                  className="relative rounded-2xl object-cover w-full shadow-lg"
-                />
+            <div className="relative">
+              <div className="absolute -inset-4 bg-teal/5 rounded-3xl -rotate-2" aria-hidden="true" />
+              <img
+                src={PACKAGE_IMG}
+                alt="Tecalma Flour Tortillas"
+                className="relative rounded-2xl object-cover w-full shadow-lg"
+              />
+            </div>
+            <div>
+              <span className="inline-block text-xs font-body font-700 uppercase tracking-wider bg-amber/10 text-amber px-3 py-1 rounded-full mb-4">
+                Our Flagship
+              </span>
+              <h2 className="font-display text-3xl sm:text-4xl font-bold text-charcoal mb-4">
+                Meet Our Flour Tortillas
+              </h2>
+              <p className="font-body text-charcoal/70 mb-6 leading-relaxed">
+                Our signature flour tortillas are crafted from simple, wholesome ingredients.
+                Extra soft, perfectly pliable, and made to hold whatever you love most.
+              </p>
+              <div className="grid grid-cols-2 gap-3 mb-8">
+                {['10 tortillas per pack', '14 oz (396g)', 'Extra soft & flexible', 'Non-GMO certified'].map(item => (
+                  <div key={item} className="flex items-center gap-2 text-sm font-body text-charcoal/70">
+                    <span className="text-teal">✦</span> {item}
+                  </div>
+                ))}
               </div>
-            </ScrollReveal>
-            <ScrollReveal delay={150}>
-              <div>
-                <span className="inline-block text-xs font-body font-700 uppercase tracking-wider bg-amber/10 text-amber px-3 py-1 rounded-full mb-4">
-                  Our Flagship
-                </span>
-                <h2 className="font-display text-3xl sm:text-4xl font-bold text-charcoal mb-4">
-                  Meet Our Flour Tortillas
-                </h2>
-                <p className="font-body text-charcoal/70 mb-6 leading-relaxed">
-                  Our signature flour tortillas are crafted from simple, wholesome ingredients.
-                  Extra soft, perfectly pliable, and made to hold whatever you love most.
-                </p>
-                <div className="grid grid-cols-2 gap-3 mb-8">
-                  {['10 tortillas per pack', '14 oz (396g)', 'Extra soft & flexible', 'Non-GMO certified'].map(item => (
-                    <div key={item} className="flex items-center gap-2 text-sm font-body text-charcoal/70">
-                      <span className="text-teal">✦</span> {item}
-                    </div>
-                  ))}
-                </div>
-                <Link
-                  to="/products"
-                  className="inline-flex items-center gap-2 font-body font-700 text-teal hover:text-teal-dark transition-colors"
-                >
-                  See All Products <span className="text-lg">→</span>
-                </Link>
-              </div>
-            </ScrollReveal>
+              <Link
+                to="/products"
+                className="inline-flex items-center gap-2 font-body font-700 text-teal hover:text-teal-dark transition-colors"
+              >
+                See All Products <span className="text-lg">→</span>
+              </Link>
+            </div>
           </div>
         </div>
       </section>
@@ -237,11 +232,9 @@ export default function Home() {
         </div>
 
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <ScrollReveal>
-            <h2 className="font-display text-3xl sm:text-4xl font-bold text-white text-center mb-12">
-              The Island <span className="italic text-amber">Loves</span> It.
-            </h2>
-          </ScrollReveal>
+          <h2 className="font-display text-3xl sm:text-4xl font-bold text-white text-center mb-12">
+            The Island <span className="italic text-amber">Loves</span> It.
+          </h2>
 
           <div
             className="relative"
@@ -293,48 +286,42 @@ export default function Home() {
       {/* ===== WHERE TO BUY TEASER ===== */}
       <section className="bg-cream py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <ScrollReveal>
-            <div className="text-center mb-12">
-              <h2 className="font-display text-3xl sm:text-4xl font-bold text-charcoal mb-3">
-                Find Us <span className="italic text-teal">Near You</span>
-              </h2>
-              <p className="font-body text-charcoal/60 max-w-lg mx-auto">
-                Available at your favorite local Hawai'i grocery stores and for online order with island-wide delivery.
-              </p>
-            </div>
-          </ScrollReveal>
+          <div className="text-center mb-12">
+            <h2 className="font-display text-3xl sm:text-4xl font-bold text-charcoal mb-3">
+              Find Us <span className="italic text-teal">Near You</span>
+            </h2>
+            <p className="font-body text-charcoal/60 max-w-lg mx-auto">
+              Available at your favorite local Hawai'i grocery stores and for online order with island-wide delivery.
+            </p>
+          </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-2xl mx-auto">
-            <ScrollReveal>
-              <Link
-                to="/where-to-buy"
-                className="block bg-warm-white rounded-3xl p-8 text-center shadow-md hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 group"
-              >
-                <div className="text-4xl mb-4">🏪</div>
-                <h3 className="font-display text-lg font-bold text-charcoal mb-2">Find a Store Near You</h3>
-                <p className="font-body text-sm text-charcoal/60 mb-4">
-                  Browse our retail locations across the Hawaiian islands.
-                </p>
-                <span className="font-body font-700 text-teal group-hover:text-teal-dark transition-colors">
-                  View Locations →
-                </span>
-              </Link>
-            </ScrollReveal>
-            <ScrollReveal delay={100}>
-              <Link
-                to="/shop"
-                className="block bg-warm-white rounded-3xl p-8 text-center shadow-md hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 group"
-              >
-                <div className="text-4xl mb-4">📦</div>
-                <h3 className="font-display text-lg font-bold text-charcoal mb-2">Order Online</h3>
-                <p className="font-body text-sm text-charcoal/60 mb-4">
-                  Get Tecalma delivered fresh to your door across Hawai'i.
-                </p>
-                <span className="font-body font-700 text-teal group-hover:text-teal-dark transition-colors">
-                  Shop Now →
-                </span>
-              </Link>
-            </ScrollReveal>
+            <Link
+              to="/where-to-buy"
+              className="block bg-warm-white rounded-3xl p-8 text-center shadow-md hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 group"
+            >
+              <div className="text-4xl mb-4">🏪</div>
+              <h3 className="font-display text-lg font-bold text-charcoal mb-2">Find a Store Near You</h3>
+              <p className="font-body text-sm text-charcoal/60 mb-4">
+                Browse our retail locations across the Hawaiian islands.
+              </p>
+              <span className="font-body font-700 text-teal group-hover:text-teal-dark transition-colors">
+                View Locations →
+              </span>
+            </Link>
+            <Link
+              to="/shop"
+              className="block bg-warm-white rounded-3xl p-8 text-center shadow-md hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 group"
+            >
+              <div className="text-4xl mb-4">📦</div>
+              <h3 className="font-display text-lg font-bold text-charcoal mb-2">Order Online</h3>
+              <p className="font-body text-sm text-charcoal/60 mb-4">
+                Get Tecalma delivered fresh to your door across Hawai'i.
+              </p>
+              <span className="font-body font-700 text-teal group-hover:text-teal-dark transition-colors">
+                Shop Now →
+              </span>
+            </Link>
           </div>
         </div>
       </section>
