@@ -2,6 +2,8 @@ import { useState } from 'react';
 import { toast } from 'sonner';
 import WavyDivider from '../components/WavyDivider';
 
+const WHOLESALE_FORM_ENDPOINT = 'https://formspree.io/f/mnjgajal';
+
 const ISLANDS = ["O'ahu", 'Maui', "Hawai'i Island", "Kaua'i", "Moloka'i", 'Other'];
 const VOLUMES = ['Just exploring', '1–10 packs/week', '10–50 packs/week', '50–100 packs/week', '100+ packs/week'];
 const USES = ['Tacos & street food', 'Breakfast / brunch', 'Wraps & sandwiches', 'Quesadillas', 'Multiple uses', 'Other'];
@@ -15,13 +17,47 @@ const valueProps = [
 ];
 
 export default function Wholesale() {
-  const [submitted, setSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSubmitted, setIsSubmitted] = useState(false);
+  const [form, setForm] = useState({
+    name: '',
+    business: '',
+    email: '',
+    phone: '',
+    island: '',
+    volume: '',
+    use: '',
+    notes: '',
+  });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const update = (field: string, value: string) =>
+    setForm(prev => ({ ...prev, [field]: value }));
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setSubmitted(true);
-    toast.success("Inquiry received! We'll be in touch soon.");
+    setIsSubmitting(true);
+
+    try {
+      const response = await fetch(WHOLESALE_FORM_ENDPOINT, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(form),
+      });
+
+      if (response.ok) {
+        setIsSubmitted(true);
+        toast.success("Inquiry received! We'll be in touch soon.");
+      } else {
+        toast.error("Something went wrong. Please try again or email us at hello@tecalmatortillas.com");
+      }
+    } catch {
+      toast.error("Something went wrong. Please try again or email us at hello@tecalmatortillas.com");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
+
+  const inputClass = 'w-full px-4 py-3 rounded-xl border border-charcoal/15 bg-white font-body text-sm focus:outline-none focus:ring-2 focus:ring-teal/40';
 
   return (
     <>
@@ -65,7 +101,7 @@ export default function Wholesale() {
 
             {/* Right — form */}
             <div className="bg-warm-white rounded-2xl p-8 shadow-lg">
-              {submitted ? (
+              {isSubmitted ? (
                 <div className="text-center py-12">
                   <div className="text-4xl mb-4">🌺</div>
                   <h3 className="font-display text-2xl font-bold text-charcoal mb-3">
@@ -83,50 +119,51 @@ export default function Wholesale() {
                   <form onSubmit={handleSubmit} className="space-y-4">
                     <div>
                       <label className="block font-body text-sm font-600 text-charcoal/70 mb-1">First & Last Name *</label>
-                      <input type="text" required className="w-full px-4 py-3 rounded-xl border border-charcoal/15 bg-white font-body text-sm focus:outline-none focus:ring-2 focus:ring-teal/40" />
+                      <input type="text" required value={form.name} onChange={e => update('name', e.target.value)} className={inputClass} />
                     </div>
                     <div>
                       <label className="block font-body text-sm font-600 text-charcoal/70 mb-1">Restaurant / Business Name *</label>
-                      <input type="text" required className="w-full px-4 py-3 rounded-xl border border-charcoal/15 bg-white font-body text-sm focus:outline-none focus:ring-2 focus:ring-teal/40" />
+                      <input type="text" required value={form.business} onChange={e => update('business', e.target.value)} className={inputClass} />
                     </div>
                     <div>
                       <label className="block font-body text-sm font-600 text-charcoal/70 mb-1">Email Address *</label>
-                      <input type="email" required className="w-full px-4 py-3 rounded-xl border border-charcoal/15 bg-white font-body text-sm focus:outline-none focus:ring-2 focus:ring-teal/40" />
+                      <input type="email" required value={form.email} onChange={e => update('email', e.target.value)} className={inputClass} />
                     </div>
                     <div>
                       <label className="block font-body text-sm font-600 text-charcoal/70 mb-1">Phone Number *</label>
-                      <input type="tel" required className="w-full px-4 py-3 rounded-xl border border-charcoal/15 bg-white font-body text-sm focus:outline-none focus:ring-2 focus:ring-teal/40" />
+                      <input type="tel" required value={form.phone} onChange={e => update('phone', e.target.value)} className={inputClass} />
                     </div>
                     <div>
                       <label className="block font-body text-sm font-600 text-charcoal/70 mb-1">Island / Location *</label>
-                      <select required defaultValue="" className="w-full px-4 py-3 rounded-xl border border-charcoal/15 bg-white font-body text-sm focus:outline-none focus:ring-2 focus:ring-teal/40">
+                      <select required value={form.island} onChange={e => update('island', e.target.value)} className={inputClass}>
                         <option value="" disabled>Select island</option>
                         {ISLANDS.map(i => <option key={i} value={i}>{i}</option>)}
                       </select>
                     </div>
                     <div>
                       <label className="block font-body text-sm font-600 text-charcoal/70 mb-1">Estimated Weekly Volume *</label>
-                      <select required defaultValue="" className="w-full px-4 py-3 rounded-xl border border-charcoal/15 bg-white font-body text-sm focus:outline-none focus:ring-2 focus:ring-teal/40">
+                      <select required value={form.volume} onChange={e => update('volume', e.target.value)} className={inputClass}>
                         <option value="" disabled>Select volume</option>
                         {VOLUMES.map(v => <option key={v} value={v}>{v}</option>)}
                       </select>
                     </div>
                     <div>
                       <label className="block font-body text-sm font-600 text-charcoal/70 mb-1">How would you use Tecalma? *</label>
-                      <select required defaultValue="" className="w-full px-4 py-3 rounded-xl border border-charcoal/15 bg-white font-body text-sm focus:outline-none focus:ring-2 focus:ring-teal/40">
+                      <select required value={form.use} onChange={e => update('use', e.target.value)} className={inputClass}>
                         <option value="" disabled>Select use</option>
                         {USES.map(u => <option key={u} value={u}>{u}</option>)}
                       </select>
                     </div>
                     <div>
                       <label className="block font-body text-sm font-600 text-charcoal/70 mb-1">Anything else you'd like us to know?</label>
-                      <textarea rows={3} className="w-full px-4 py-3 rounded-xl border border-charcoal/15 bg-white font-body text-sm focus:outline-none focus:ring-2 focus:ring-teal/40 resize-none" />
+                      <textarea rows={3} value={form.notes} onChange={e => update('notes', e.target.value)} className={`${inputClass} resize-none`} />
                     </div>
                     <button
                       type="submit"
-                      className="w-full bg-teal text-white font-body font-700 py-3.5 rounded-full hover:bg-teal-dark transition-colors shadow-lg shadow-teal/25 cursor-pointer"
+                      disabled={isSubmitting}
+                      className="w-full bg-teal text-white font-body font-700 py-3.5 rounded-full hover:bg-teal-dark transition-colors shadow-lg shadow-teal/25 cursor-pointer disabled:opacity-60 disabled:cursor-not-allowed"
                     >
-                      Send Inquiry →
+                      {isSubmitting ? 'Sending...' : 'Send Inquiry →'}
                     </button>
                   </form>
                 </>
