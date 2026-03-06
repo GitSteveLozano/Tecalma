@@ -5,7 +5,7 @@ import WavyDivider from '../components/WavyDivider';
 const WHOLESALE_FORM_ENDPOINT = 'https://formspree.io/f/mnjgajal';
 
 const ISLANDS = ["O'ahu", 'Maui', "Hawai'i Island", "Kaua'i", "Moloka'i", 'Other'];
-const VOLUMES = ['Just exploring', '10–50 tortillas/week', '100–500 tortillas/week', '500–1,000 tortillas/week', '1,000+ tortillas/week'];
+const VOLUMES = ['Just exploring', '10–50 tortillas/week', '50–100 tortillas/week', '100–500 tortillas/week', '500–1,000 tortillas/week', '1,000+ tortillas/week'];
 const USES = ['Tacos & street food', 'Breakfast / brunch', 'Quesadillas', 'Multiple uses', 'Other'];
 
 const valueProps = [
