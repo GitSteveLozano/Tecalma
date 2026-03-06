@@ -5,8 +5,8 @@ import WavyDivider from '../components/WavyDivider';
 const WHOLESALE_FORM_ENDPOINT = 'https://formspree.io/f/mnjgajal';
 
 const ISLANDS = ["O'ahu", 'Maui', "Hawai'i Island", "Kaua'i", "Moloka'i", 'Other'];
-const VOLUMES = ['Just exploring', '1–10 packs/week', '10–50 packs/week', '50–100 packs/week', '100+ packs/week'];
-const USES = ['Tacos & street food', 'Breakfast / brunch', 'Wraps & sandwiches', 'Quesadillas', 'Multiple uses', 'Other'];
+const VOLUMES = ['Just exploring', '10–50 tortillas/week', '100–500 tortillas/week', '500–1,000 tortillas/week', '1,000+ tortillas/week'];
+const USES = ['Tacos & street food', 'Breakfast / brunch', 'Quesadillas', 'Multiple uses', 'Other'];
 
 const valueProps = [
   'Extra soft, consistent texture — holds up in service',
@@ -134,8 +134,8 @@ export default function Wholesale() {
                       <input type="tel" required value={form.phone} onChange={e => update('phone', e.target.value)} className={inputClass} />
                     </div>
                     <div>
-                      <label className="block font-body text-sm font-600 text-charcoal/70 mb-1">Island / Location *</label>
-                      <select required value={form.island} onChange={e => update('island', e.target.value)} className={inputClass}>
+                      <label className="block font-body text-sm font-600 text-charcoal/70 mb-1">Island / Location</label>
+                      <select value={form.island} onChange={e => update('island', e.target.value)} className={inputClass}>
                         <option value="" disabled>Select island</option>
                         {ISLANDS.map(i => <option key={i} value={i}>{i}</option>)}
                       </select>
@@ -148,8 +148,8 @@ export default function Wholesale() {
                       </select>
                     </div>
                     <div>
-                      <label className="block font-body text-sm font-600 text-charcoal/70 mb-1">How would you use Tecalma? *</label>
-                      <select required value={form.use} onChange={e => update('use', e.target.value)} className={inputClass}>
+                      <label className="block font-body text-sm font-600 text-charcoal/70 mb-1">How would you use Tecalma?</label>
+                      <select value={form.use} onChange={e => update('use', e.target.value)} className={inputClass}>
                         <option value="" disabled>Select use</option>
                         {USES.map(u => <option key={u} value={u}>{u}</option>)}
                       </select>

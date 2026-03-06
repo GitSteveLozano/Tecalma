@@ -30,17 +30,17 @@ export default function Products() {
               badges={['Non-GMO', 'Small Batch', 'Extra Soft']}
             />
             <ProductCard
+              name="Corn Tortillas"
+              subtitle="Coming Soon"
+              description="Traditional corn tortillas with the same Tecalma softness and quality. Perfect for street tacos and tostadas."
+              badges={['Non-GMO', 'Small Batch']}
+              comingSoon
+            />
+            <ProductCard
               name="Whole Wheat Tortillas"
               subtitle="Coming Soon"
               description="All the softness you love with whole wheat goodness. Same Tecalma quality, heartier flavor."
               badges={['Whole Grain', 'Non-GMO']}
-              comingSoon
-            />
-            <ProductCard
-              name="Mini Tortillas"
-              subtitle="Coming Soon"
-              description="Street taco-sized perfection. A mini pack for the perfect bite every time."
-              badges={['Mini Size', 'Non-GMO']}
               comingSoon
             />
           </div>
