@@ -53,8 +53,8 @@ export default function About() {
                 in Hawai'i.
               </p>
               <p>
-                Today, Tecalma Tortillas are made fresh on the islands and available at local grocery
-                stores. Every pack carries the same care and quality as that very first batch —
+                Today, Tecalma Tortilla's are made fresh on the islands and coming to a store near
+                you. Every pack carries the same care and quality as that very first batch —
                 because some things you just can't compromise on.
               </p>
             </div>
