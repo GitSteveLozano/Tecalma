@@ -22,7 +22,7 @@ export default function Products() {
       {/* Product Grid */}
       <section className="bg-cream py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 max-w-3xl mx-auto">
             <ProductCard
               name="Flour Tortillas"
               subtitle="10 Pack · 14 oz (396g)"
@@ -33,14 +33,8 @@ export default function Products() {
               name="Corn Tortillas"
               subtitle="Coming Soon"
               description="Traditional corn tortillas with the same Tecalma softness and quality. Perfect for street tacos and tostadas."
+              image="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcScMYwQFlD-r0LKFQwPuCWZ3QxL9DGhqaQ6yg&s"
               badges={['Non-GMO', 'Small Batch']}
-              comingSoon
-            />
-            <ProductCard
-              name="Whole Wheat Tortillas"
-              subtitle="Coming Soon"
-              description="All the softness you love with whole wheat goodness. Same Tecalma quality, heartier flavor."
-              badges={['Whole Grain', 'Non-GMO']}
               comingSoon
             />
           </div>
