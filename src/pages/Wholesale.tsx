@@ -5,8 +5,8 @@ import WavyDivider from '../components/WavyDivider';
 const WHOLESALE_FORM_ENDPOINT = 'https://formspree.io/f/mnjgajal';
 
 const ISLANDS = ["O'ahu", 'Maui', "Hawai'i Island", "Kaua'i", "Moloka'i", 'Other'];
-const VOLUMES = ['Just exploring', '10–50 tortillas/week', '100–500 tortillas/week', '500–1,000 tortillas/week', '1,000+ tortillas/week'];
-const USES = ['Tacos & street food', 'Breakfast / brunch', 'Quesadillas', 'Multiple uses', 'Other'];
+const VOLUMES = ['Just exploring', '10–50 tortillas/week', '50–100 tortillas/week', '100–500 tortillas/week', '500–1,000 tortillas/week', '1,000+ tortillas/week'];
+
 
 const valueProps = [
   'Extra soft, consistent texture — holds up in service',
@@ -26,7 +26,7 @@ export default function Wholesale() {
     phone: '',
     island: '',
     volume: '',
-    use: '',
+
     notes: '',
   });
 
@@ -147,13 +147,7 @@ export default function Wholesale() {
                         {VOLUMES.map(v => <option key={v} value={v}>{v}</option>)}
                       </select>
                     </div>
-                    <div>
-                      <label className="block font-body text-sm font-600 text-charcoal/70 mb-1">How would you use Tecalma?</label>
-                      <select value={form.use} onChange={e => update('use', e.target.value)} className={inputClass}>
-                        <option value="" disabled>Select use</option>
-                        {USES.map(u => <option key={u} value={u}>{u}</option>)}
-                      </select>
-                    </div>
+
                     <div>
                       <label className="block font-body text-sm font-600 text-charcoal/70 mb-1">Anything else you'd like us to know?</label>
                       <textarea rows={3} value={form.notes} onChange={e => update('notes', e.target.value)} className={`${inputClass} resize-none`} />
