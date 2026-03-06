@@ -76,7 +76,7 @@ export default function Home() {
                 <span className="italic text-teal">Aloha</span>
               </h1>
               <p className="font-body text-lg text-charcoal/70 mb-8 max-w-lg leading-relaxed">
-                Extra soft, small-batch flour tortillas made right here in Hawai'i. Non-GMO. Fresh natural. Local le'ale.
+                Extra soft, small-batch flour tortillas made right here in Hawai'i. No preservatives. Fresh natural. Local le'ale.
               </p>
               <div className="flex flex-wrap gap-4 mb-8">
                 <Link
@@ -93,7 +93,7 @@ export default function Home() {
                 </Link>
               </div>
               <div className="flex flex-wrap gap-6 text-sm font-body font-600 text-charcoal/60 mb-4">
-                <span>✦ Non-GMO</span>
+                <span>✦ No Preservatives</span>
                 <span>✦ Small Batch</span>
                 <span>✦ Hawai'i Made</span>
               </div>
@@ -146,9 +146,9 @@ export default function Home() {
                     <path d="M24 18 L24 30 M20 24 L24 18 L28 24" fill="none" stroke="#27ae60" strokeWidth="2" strokeLinecap="round" />
                   </svg>
                 ),
-                title: '100% Non-GMO',
-                desc: 'Clean ingredients you can trust. No artificial preservatives, no shortcuts.',
-                badge: 'Certified',
+                title: 'Clean Ingredients',
+                desc: 'Simple ingredients, nothing extra. No artificial preservatives, no fillers, no shortcuts.',
+                badge: 'Simple & Clean',
               },
               {
                 icon: (
@@ -204,7 +204,7 @@ export default function Home() {
                 Extra soft, perfectly pliable, and made to hold whatever you love most.
               </p>
               <div className="grid grid-cols-2 gap-3 mb-8">
-                {['10 tortillas per pack', '14 oz (396g)', 'Extra soft & flexible', 'Non-GMO certified'].map(item => (
+                {['10 tortillas per pack', '14 oz (396g)', 'Extra soft & flexible', 'No artificial preservatives'].map(item => (
                   <div key={item} className="flex items-center gap-2 text-sm font-body text-charcoal/70">
                     <span className="text-teal">✦</span> {item}
                   </div>

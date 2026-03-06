@@ -10,7 +10,7 @@ const VOLUMES = ['Just exploring', '10–50 tortillas/week', '50–100 tortillas
 
 const valueProps = [
   'Extra soft, consistent texture — holds up in service',
-  'Non-GMO, no artificial preservatives',
+  'Clean label, no artificial preservatives',
   "Made in Hawai'i — local story your guests will love",
   'Flexible order quantities as we scale',
   'Direct relationship with the maker',

@@ -77,7 +77,7 @@ export default function About() {
               {
                 emoji: '🌿',
                 title: 'Clean Ingredients',
-                desc: 'Non-GMO, no artificial additives, no hydrogenated oils. Just simple, wholesome ingredients you can pronounce and feel good about.',
+                desc: 'No artificial preservatives, no artificial additives, no hydrogenated oils. Just simple, wholesome ingredients you can pronounce and feel good about.',
               },
               {
                 emoji: '🏝️',
