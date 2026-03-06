@@ -15,7 +15,7 @@ export default function About() {
                 Our Story
               </span>
               <h1 className="font-display text-4xl sm:text-5xl font-bold text-white leading-tight mb-4">
-                Born in Hawai'i.{' '}
+                Born in Mexico.{' '}
                 <span className="italic text-teal">Made with Aloha.</span>
               </h1>
               <p className="font-body text-white/60 leading-relaxed">
