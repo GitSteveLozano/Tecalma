@@ -27,14 +27,14 @@ export default function Products() {
               name="Flour Tortillas"
               subtitle="10 Pack · 14 oz (396g)"
               description="Our signature extra-soft flour tortillas. Perfect for tacos, burritos, wraps, and quesadillas. Made fresh in Hawai'i."
-              badges={['Non-GMO', 'Small Batch', 'Extra Soft']}
+              badges={['Clean Label', 'Small Batch', 'Extra Soft']}
             />
             <ProductCard
               name="Corn Tortillas"
               subtitle="Coming Soon"
               description="Traditional corn tortillas with the same Tecalma softness and quality. Perfect for street tacos and tostadas."
               image="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcScMYwQFlD-r0LKFQwPuCWZ3QxL9DGhqaQ6yg&s"
-              badges={['Non-GMO', 'Small Batch']}
+              badges={['Clean Label', 'Small Batch']}
               comingSoon
             />
           </div>
@@ -56,7 +56,7 @@ export default function Products() {
             {[
               { label: 'No Artificial Preservatives', icon: '🚫' },
               { label: 'No Hydrogenated Oils', icon: '💧' },
-              { label: 'Non-GMO Ingredients', icon: '🌿' },
+              { label: 'Clean Label Ingredients', icon: '🌿' },
             ].map(item => (
               <div key={item.label} className="bg-warm-white rounded-3xl p-6 shadow-md">
                 <div className="text-3xl mb-3">{item.icon}</div>
