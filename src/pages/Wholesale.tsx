@@ -177,6 +177,10 @@ export default function Wholesale() {
             <a href="mailto:hello@tecalmatortillas.com" className="font-700 text-teal hover:text-teal-dark transition-colors underline">
               hello@tecalmatortillas.com
             </a>
+            {' '}or call{' '}
+            <a href="tel:+19723913616" className="font-700 text-teal hover:text-teal-dark transition-colors underline">
+              (972) 391-3616
+            </a>
           </p>
         </div>
       </section>
